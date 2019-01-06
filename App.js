@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, PanResponder } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { Card, Button } from 'react-native-elements'
 
 import Deck from './src/Deck'
@@ -16,18 +16,6 @@ const DATA = [
 ]
 
 export default class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-
-    const panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderMove: (e, gesture) => console.log(gesture),
-      onPanResponderRelease: () => { }
-    })
-
-    this.state = { panResponder }
-  }
 
   renderCard(item) {
     return (
@@ -52,6 +40,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginTop: 20
   },
 })
